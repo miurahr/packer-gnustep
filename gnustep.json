@@ -1,4 +1,8 @@
 {
+  "variables": {
+    "ncpu": "4"
+  },
+
   "builders": [
     {
         "type": "docker",
@@ -11,6 +15,7 @@
   "provisioners": [
     {
       "type": "shell",
+      "environment_vars": [ "NCPU={{ user `ncpu`}}" ],
       "script": "install.sh"
     }
   ],

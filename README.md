@@ -14,8 +14,10 @@ Dependency
 How to build
 --------------------
 
-Simply run such as
+Simply run
 
 ```bash
-$ packer build gnustep.json
+$ packer build -var 'ncpu=3' gnustep.json
 ```
+
+Please specify number of CPUs you want to use for compiling, that is concurrency for 'make'
