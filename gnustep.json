@@ -1,0 +1,27 @@
+{
+  "builders": [
+    {
+        "type": "docker",
+        "image": "ubuntu:14.04.2",
+        "commit": true,
+        "pull": true
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "install.sh"
+    }
+  ],
+
+  "post-processors": [
+    {
+    "type": "docker-tag",
+    "only": ["docker"],
+    "repository": "miurahr/gnustep",
+    "tag": "latest"
+    }
+  ]
+
+}
